@@ -47,6 +47,11 @@ minimum = the active step), replaces the
 selection anchored at its original top-left, and updates both sliders to the new
 size (raising a slider's max if the size exceeds 4096). Requires Photoshop 25+.
 
+## Installing
+
+Download CCX from [Relases](https://github.com/MigCurto/PS-Plugin-Marquee-Selection-64-16-8px/releases)
+Open (righ click -> open with) Adobe UnifiedPluginInstalerAgent
+
 ## Loading the plugin for further customization with free Adobe EXP Developer Tools
 
 1. Install **Photoshop 25+** and the **UXP Developer Tool** (free, from Adobe).
