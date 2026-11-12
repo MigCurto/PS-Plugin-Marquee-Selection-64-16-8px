@@ -1,4 +1,4 @@
-# Marquee 64/16px Setup — Photoshop UXP Panel Plugin
+# Marquee 64/16/8px Setup — Photoshop UXP Panel Plugin
 
 A dockable Photoshop panel that sets up the **Rectangular Marquee Tool** on
 **64/16-pixel increments** (toggleable):
