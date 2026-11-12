@@ -37,11 +37,14 @@ minimum = the active step), replaces the
 selection anchored at its original top-left, and updates both sliders to the new
 size (raising a slider's max if the size exceeds 4096). Requires Photoshop 25+.
 
-## Loading the plugin
+## Loading the plugin for further customization/editing
 
 1. Install **Photoshop 25+** and the **UXP Developer Tool** (free, from Adobe).
 2. In UXP Developer Tool: **Add Plugin** → select this folder.
 3. Click **Load** — the panel appears under **Window > Extensions > Marquee 64/16px Setup**.
+
+## Loading the plugin for PS use (already packed)
+
 
 
 ## Files
