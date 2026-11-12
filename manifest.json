@@ -1,6 +1,6 @@
 {
   "id": "com.local.marquee64",
-  "name": "Marquee 64/16px Setup",
+  "name": "Marquee 64/16/8px Setup",
   "version": "1.0.0",
   "main": "index.html",
   "host": [
@@ -16,7 +16,7 @@
       "id": "marquee64",
       "minimumSize": {
         "width": 260,
-        "height": 220
+        "height": 500
       },
       "maximumSize": {
         "width": 2000,
@@ -24,11 +24,11 @@
       },
       "preferredDockedSize": {
         "width": 260,
-        "height": 300
+        "height": 500
       },
       "preferredFloatingSize": {
         "width": 320,
-        "height": 300
+        "height": 500
       },
       "label": {
         "default": "Marquee 64/16px Setup"

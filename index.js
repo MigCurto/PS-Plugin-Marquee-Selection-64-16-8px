@@ -1,4 +1,4 @@
-// Marquee 64/16px Setup panel logic.
+// Marquee 64/16/8px Setup panel logic.
 // Uses the Photoshop UXP API (require('photoshop')) and low-level batchPlay
 // action descriptors to drive the Rectangular Marquee Tool.
 
@@ -40,13 +40,12 @@ function applyStepMode(mode) {
 function setActiveButton(mode) {
   const b64 = document.getElementById('stepBtn64');
   const b16 = document.getElementById('stepBtn16');
-  if (mode === 64) {
-    b64.classList.add('activeStep');
-    b16.classList.remove('activeStep');
-  } else {
-    b16.classList.add('activeStep');
-    b64.classList.remove('activeStep');
-  }
+  const b8 = document.getElementById('stepBtn8');
+  b64.classList.remove('activeStep');
+  b16.classList.remove('activeStep');
+  b8.classList.remove('activeStep');
+  const active = mode === 64 ? b64 : mode === 16 ? b16 : b8;
+  active.classList.add('activeStep');
 }
 
 
@@ -369,6 +368,7 @@ function bindButton(id, fn) {
 bindButton('applyBtn', applyToTool);
 bindButton('stepBtn64', () => applyStepMode(64));
 bindButton('stepBtn16', () => applyStepMode(16));
+bindButton('stepBtn8', () => applyStepMode(8));
 bindButton('copyMergedBtn', copyMergedAction);
 bindButton('pasteBtn', pasteAction);
 bindButton('conformBtn', conformSelection);
