@@ -11,6 +11,16 @@ A dockable Photoshop panel that sets up the **Rectangular Marquee Tool** on
   **Copy (merged)**, **Paste (from Clipboard)**, and
   **Conform existing selection**.
 
+## About
+
+This is 100% vibecoded , did it to full fill my need for an helper to ease roundtrips from Drawthings/ComfyUI to Photoshop and back via clipboard while keeping image dimension.
+please please free to use or modify any way you like it
+
+Think its self-explanatory:
+
+<img width="335" height="568" alt="image" src="https://github.com/user-attachments/assets/f6d2e50d-cdeb-4e61-b075-e4dfc92f9a47" />
+
+
 ## What the button does
 
 1. Selects the Rectangular Marquee Tool (`select` → `marqueeRectTool`).
