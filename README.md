@@ -3,7 +3,7 @@
 A dockable Photoshop panel that sets up the **Rectangular Marquee Tool** on
 **64/16-pixel increments** (toggleable):
 
-- Two sliders — **Width** and **Height** — each stepping in 64 px (64 → 4096).
+- Two sliders — **Width** and **Height** — each stepping in 64,32 or 8 px (64/32/8 → 4096).
   Each has its description on the left and current pixel value on the right of
   one line, with the slider on its own full-width line beneath.
 - A live **MP** readout (area in megapixels, one decimal).
@@ -37,45 +37,11 @@ minimum = the active step), replaces the
 selection anchored at its original top-left, and updates both sliders to the new
 size (raising a slider's max if the size exceeds 4096). Requires Photoshop 25+.
 
-## Draw Things workflow (no generation)
-
-The plugin cannot push an image into Draw Things' canvas without generating:
-UXP has no UI automation/AppleScript. The HTTP API server exposes only
-`/sdapi/v1/txt2img`, `/sdapi/v1/img2img`, `/`, and `/sdapi/v1/options`, and the
-gRPC service exposes only `Echo`, `FilesExist`, `GenerateImage`, `UploadFile`,
-`Pubkey`, and `Hours` — no canvas or moodboard load endpoint. The app's
-scripting API (`canvas.loadImage`) runs only inside Draw Things.
-
-Reliable no-generation path:
-
-1. Click **Copy (merged)** in the panel — the merged pixels go to the clipboard.
-2. In Draw Things, press **⌘V** (Paste) to place the image on the canvas.
-
-The installed app registers a real `drawthings` URL scheme, but it has no
-documented commands; the `draw-things://` API sometimes cited online is a
-fictional proposal, not a real feature.
-
-## Loading the plugin
+## Loading the plugin for further customization with free Adobe EXP Developer Tools
 
 1. Install **Photoshop 25+** and the **UXP Developer Tool** (free, from Adobe).
 2. In UXP Developer Tool: **Add Plugin** → select this folder.
 3. Click **Load** — the panel appears under **Window > Extensions > Marquee 64/16px Setup**.
-
-## Verification note (important)
-
-The tool-selection, selection-clearing, selection-creation, and transform
-descriptors are verified against published ExtendScript code and the user's
-recorded **Copy As JavaScript** output.
-
-Setting the marquee tool's **option-bar** fields (Style = Fixed Size, Width,
-Height) is **not scriptable**: Photoshop does not record those UI-only changes
-as actions, and the internal `currentToolOptions` descriptor (`$MrqI` /
-`$MrqF`) is undocumented and varies by build. That attempt has been removed
-from the panel.
-
-Reliable workaround: set the marquee to Fixed Size + your dimensions once
-manually, then save it as a **Tool Preset** (option bar → preset dropdown → +).
-Selecting that preset gives you the pre-filled bar values.
 
 ## Files
 
