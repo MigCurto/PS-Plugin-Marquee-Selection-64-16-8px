@@ -13,7 +13,7 @@ A dockable Photoshop panel that sets up the **Rectangular Marquee Tool** on
 
 ## About
 
-This is 100% vibecoded , did it to full fill my need for an helper to ease roundtrips from Drawthings/ComfyUI to Photoshop and back via clipboard while keeping image dimension.
+This is 100% vibecoded , did it to fulfill my need for an helper to ease round trips from Drawthings/ComfyUI to Photoshop and back via clipboard while keeping image pixel dimensions.
 please please free to use or modify any way you like it
 
 Think its self-explanatory:
