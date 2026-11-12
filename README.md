@@ -13,12 +13,16 @@ A dockable Photoshop panel that sets up the **Rectangular Marquee Tool** on
 
 ## About
 
-This is 100% vibecoded , did it to fulfill my need for an helper to ease round trips from Drawthings/ComfyUI to Photoshop and back via clipboard while keeping image pixel dimensions.
-please please free to use or modify any way you like it
+A lot of generation models and even some Apps expect input images with certain pixel multiples while copying/generating/pasting back so it wont lead to unintentional shifting or cropping.
+This is 100% vibecoded , did it to fulfill my needs for a PS helper to ease round trips from Drawthings/ComfyUI to Photoshop and back via clipboard without having to resort to a bunch of pre-made presets with fixed pixel multiples in order to keep same image pixel dimensions on round trips. At the same time it has MP (Million Pixel) counter to keep within certain models limitation using odd ratios.
+Please free to use or modify any way you like it.
 
 Think its self-explanatory:
 
 <img width="335" height="568" alt="image" src="https://github.com/user-attachments/assets/f6d2e50d-cdeb-4e61-b075-e4dfc92f9a47" />
+
+<img width="2311" height="2471" alt="image" src="https://github.com/user-attachments/assets/9cd8fb68-fd26-430f-a08a-f5e78f3fdb2c" />
+
 
 
 ## What the button does
