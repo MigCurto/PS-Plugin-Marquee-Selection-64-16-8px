@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Marquee 64/16px Setup</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 12px;
+      color: #ffffff;
+    }
+    .row {
+      margin-bottom: 12px;
+    }
+    .rowHead {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
+    }
+    .rowHead td {
+      padding: 0;
+      vertical-align: baseline;
+    }
+    .labelCell {
+      text-align: left;
+    }
+    .valueCell {
+      text-align: right;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+
+      color: #ffffff;
+    }
+    .dimName {
+      font-size: 15px;
+    }
+    .dimUnit {
+      font-size: 13px;
+    }
+    .value {
+      font-size: 15px;
+      color: #ffffff;
+    }
+    .sliderCell {
+      padding: 2px 0 0 0;
+    }
+    input[type="range"] {
+      display: block;
+      width: 100%;
+    }
+    .actionBtn {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 8px;
+      padding: 8px;
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      color: #ffffff !important;
+      background-color: #303030 !important;
+      border: 1px solid #111111 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+    .actionBtn:hover {
+      background-color: #3a3a3a !important;
+    }
+    .stepBtn {
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 8px 12px;
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      color: #ffffff !important;
+      background: transparent !important;
+      border: 1px solid transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+    .stepBtn.activeStep {
+      background-color: #303030 !important;
+      border: 1px solid #111111 !important;
+    }
+    .stepBtn.activeStep:hover {
+      background-color: #3a3a3a !important;
+    }
+    #mp {
+      margin: 4px 0 16px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #ffffff;
+      min-height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <table class="rowHead">
+      <tr>
+        <td class="labelCell"><label for="stepBtn64"><span class="dimName">Step size</span> <span class="dimUnit">(64/16px)</span></label></td>
+        <td class="valueCell"><div id="stepBtn64" class="stepBtn activeStep" role="button" tabindex="0">64px Step</div><div id="stepBtn16" class="stepBtn" role="button" tabindex="0">16px Step</div></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <table class="rowHead">
+      <tr>
+        <td class="labelCell"><label for="width"><span class="dimName">Width</span> <span class="dimUnit" id="widthUnit">(px, 64-step)</span></label></td>
+        <td class="valueCell"><span class="value" id="widthVal">64 px</span></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="sliderCell">
+          <input type="range" id="width" min="64" max="4096" step="64" value="64">
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <table class="rowHead">
+      <tr>
+        <td class="labelCell"><label for="height"><span class="dimName">Height</span> <span class="dimUnit" id="heightUnit">(px, 64-step)</span></label></td>
+        <td class="valueCell"><span class="value" id="heightVal">64 px</span></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="sliderCell">
+          <input type="range" id="height" min="64" max="4096" step="64" value="64">
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="mp">0.0 MP</div>
+
+  <div id="applyBtn" class="actionBtn" role="button" tabindex="0">Draw rectangular Marquee tool</div>
+  <div id="copyMergedBtn" class="actionBtn" role="button" tabindex="0">Copy (merged)</div>
+  <div id="pasteBtn" class="actionBtn" role="button" tabindex="0">Paste (from Clipboard)</div>
+  <div id="conformBtn" class="actionBtn" role="button" tabindex="0">Conform existing selection</div>
+  <div id="status"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
